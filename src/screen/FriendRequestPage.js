@@ -1,21 +1,21 @@
 import React from "react";
 import Profile from "../components/Profile";
-import Tab from "../components/Tab";
 import "../styles/HomePage.css";
+import Tab from "../components/Tab";
 
-function MyPage() {
+function FriendRequestPage() {
   return (
     <>
-      <h1 className="title">내 정보</h1>
+      <h1 className="title">추천 친구</h1>
       <div className="profile-box">
         <Profile />
       </div>
       <div className="btn-container">
-        <button className="custom-btn btn-11">수정하기</button>
+        <button className="custom-btn btn-11">친구신청</button>
       </div>
       <Tab />
     </>
   );
 }
 
-export default MyPage;
+export default FriendRequestPage;
