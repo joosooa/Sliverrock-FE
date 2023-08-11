@@ -12,12 +12,12 @@ function Tab() {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="navlink" href="/">
+          <Nav.Link className="navlink" href="/ClubPage">
             동호회
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="navlink" href="/">
+          <Nav.Link className="navlink" href="/FriendRequestPage">
             매칭
           </Nav.Link>
         </Nav.Item>
