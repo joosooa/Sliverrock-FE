@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/friendList.css";
 import friendListImg from "../styles/friendList.jpg";
+import { BsTelephoneFill } from "react-icons/bs";
 
 const Club = () => {
   return (
@@ -10,7 +11,11 @@ const Club = () => {
         <h3 className="container">
           <h2 className="container">순자</h2>70년생 여자
         </h3>
-        <button className="callButton">전화</button>
+        <button className="callButton">
+          <div className="iconImg">
+            <BsTelephoneFill />
+          </div>
+        </button>
       </div>
     </div>
   );
