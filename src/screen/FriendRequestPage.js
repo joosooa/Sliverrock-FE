@@ -11,6 +11,7 @@ function FriendRequestPage() {
       <div className="profile-box">
         <Profile />
       </div>
+
       <div className="btn-container">
         <button className="custom-btn btn-11">수락</button>
         <button className="custom-btn btn-11">거절</button>

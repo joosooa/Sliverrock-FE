@@ -5,12 +5,16 @@ import friendListImg from "../styles/friendList.jpg";
 import { BsTelephoneFill } from "react-icons/bs";
 
 const FriendList = ({ friendList }) => {
+  const handleCallButtonClick = () => {
+    alert("전화걸기");
+  };
+
   return (
     <div>
       {friendList.map((friend, index) => (
         <div key={index} className="image-container">
           <img
-            src={friendListImg}
+            src={friend.getS3Re.imgUrl} // 이미지 URL을 지정
             alt="friendListImg"
             className="friendListImg"
           />
@@ -20,7 +24,7 @@ const FriendList = ({ friendList }) => {
               {friend.birth}&nbsp;
               {friend.gender}
             </h3>
-            <button className="callButton">
+            <button className="callButton" onClick={handleCallButtonClick}>
               <div className="iconImg">
                 <BsTelephoneFill />
               </div>

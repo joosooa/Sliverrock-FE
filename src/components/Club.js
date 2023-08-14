@@ -7,7 +7,7 @@ const Club = ({ clubName }) => {
     <div className="image-container">
       <img src={clubImg} alt="clubImg" className="clubImg" />
       <div className="text-overlay">
-        <p>{clubName}</p>
+        <p>{clubName ? clubName : "Loading..."}</p>
       </div>
       <button className="custom-btn btn-11">문의하기</button>
     </div>
