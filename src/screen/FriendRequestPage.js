@@ -1,15 +1,18 @@
 import React from "react";
-import Profile from "../components/Profile";
+import { useSelector } from "react-redux";
+import FriendRequestList from "../components/FriendRequestList";
 import "../styles/HomePage.css";
 import Tab from "../components/Tab";
 import MatchingTab from "../components/MatchingTab";
 
 function FriendRequestPage() {
+  const friendRequestList = useSelector((state) => state.friendRequestList);
+
   return (
     <>
-      <h1 className="title">N명의 실버락이 있어요</h1>
+      <h1 className="title">{`${friendRequestList.length}명의 실버락 신청이 왔어요`}</h1>
       <div className="profile-box">
-        <Profile />
+        <FriendRequestList friendRequestList={friendRequestList} />
       </div>
 
       <div className="btn-container">

@@ -13,8 +13,13 @@ const FriendList = ({ friendList }) => {
     <div>
       {friendList.map((friend, index) => (
         <div key={index} className="image-container">
+          {/* <img
+            src={friend.getS3Re.imgUrl}
+            alt="friendListImg"
+            className="friendListImg"
+          /> */}
           <img
-            src={friend.getS3Re.imgUrl} // 이미지 URL을 지정
+            src={friendListImg}
             alt="friendListImg"
             className="friendListImg"
           />
