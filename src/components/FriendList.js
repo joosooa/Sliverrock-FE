@@ -1,24 +1,35 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "../styles/friendList.css";
 import friendListImg from "../styles/friendList.jpg";
 import { BsTelephoneFill } from "react-icons/bs";
 
-const Club = () => {
+const FriendList = ({ friendList }) => {
   return (
-    <div className="image-container">
-      <img src={friendListImg} alt="friendListImg" className="friendListImg" />
-      <div>
-        <h3 className="container">
-          <h2 className="container">순자</h2>70년생 여자
-        </h3>
-        <button className="callButton">
-          <div className="iconImg">
-            <BsTelephoneFill />
+    <div>
+      {friendList.map((friend, index) => (
+        <div key={index} className="image-container">
+          <img
+            src={friendListImg}
+            alt="friendListImg"
+            className="friendListImg"
+          />
+          <div>
+            <h3 className="container">
+              <h2 className="container">{friend.nickname}</h2>
+              {friend.birth}&nbsp;
+              {friend.gender}
+            </h3>
+            <button className="callButton">
+              <div className="iconImg">
+                <BsTelephoneFill />
+              </div>
+            </button>
           </div>
-        </button>
-      </div>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Club;
+export default FriendList;
