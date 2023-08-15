@@ -1,13 +1,13 @@
 import React from "react";
 import "../styles/club.css";
-import clubImg from "../styles/club.jpg";
+// import clubImg from "../styles/club.jpg";
 
-const Club = () => {
+const Club = ({ club }) => {
   return (
     <div className="image-container">
-      <img src={clubImg} alt="clubImg" className="clubImg" />
+      <img src={club.img} alt="clubImg" className="clubImg" />
       <div className="text-overlay">
-        <p>산악 동호회</p>
+        <p>{club.name}</p>
       </div>
       <button className="custom-btn btn-11">문의하기</button>
     </div>
