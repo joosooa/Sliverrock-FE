@@ -1,4 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import clubImgTennis from "../src/styles/club_tennis.jpg";
+import clubImgBadminton from "../src/styles/club_badminton.jpg";
+import clubImgMT from "../src/styles/club.jpg";
 
 //친구 목록
 let friendList = createSlice({
@@ -98,12 +101,43 @@ let friendRequestList = createSlice({
   },
 });
 
+//club page
+let club = createSlice({
+  name: "club",
+  initialState: [
+    {
+      name: "산악 동호회",
+      img: clubImgMT,
+    },
+
+    {
+      name: "배드민턴 동호회",
+      img: clubImgBadminton,
+    },
+
+    {
+      name: "테니스 동호회",
+      img: clubImgTennis,
+    },
+  ],
+  reducers: {
+    setClub: (state, action) => {
+      const { name, img } = action.payload;
+      // state.name = name;
+      // state.img = img;
+      state.push({ name, img });
+    },
+  },
+});
+
 export const { setFriendList } = friendList.actions;
 export const { setFriendRequestList } = friendRequestList.actions;
+export const { setClub } = club.actions;
 
 export default configureStore({
   reducer: {
     friendList: friendList.reducer,
     friendRequestList: friendRequestList.reducer,
+    club: club.reducer,
   },
 });
