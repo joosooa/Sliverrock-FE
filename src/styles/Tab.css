@@ -10,10 +10,6 @@
   border-top: 3px solid black;
   padding-top: 8px;
 }
-.nav-item:disabled {
-  border-top: 3px solid black;
-  padding-top: 10px;
-}
 .navlink {
   color: black;
   font-weight: 600;
