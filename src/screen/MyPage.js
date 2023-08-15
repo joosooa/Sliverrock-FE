@@ -5,8 +5,9 @@ import "../styles/HomePage.css";
 import { useNavigate } from "react-router-dom";
 
 function MyPage() {
-  let navigate = useNavigate;
+  let navigate = useNavigate();
 
+  // 수정하기 버튼 눌럿을때 어떻게 해야할까나요
   return (
     <>
       <h1 className="title">내 정보</h1>
@@ -17,7 +18,7 @@ function MyPage() {
         <button
           className="custom-btn btn-11"
           onClick={() => {
-            navigate("/EditPage/${props.user.userId");
+            navigate("/EditPage");
           }}
         >
           수정하기
