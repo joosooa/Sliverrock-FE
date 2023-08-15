@@ -1,33 +1,33 @@
-import Nav from "react-bootstrap/Nav";
+import React from "react";
+import { Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/Tab.css";
 
 function Tab() {
+  const tabItems = [
+    { to: "/home", label: "추천친구" },
+    { to: "/ClubPage", label: "동호회" },
+    { to: "/FriendRequestPage", label: "매칭" },
+    { to: "/MyPage", label: "내정보" },
+  ];
+
   return (
-    <>
-      <Nav justify defaultActiveKey="/home" className="fixed-bottom">
-        <Nav.Item>
-          <Nav.Link className="navlink" href="/home">
-            추천친구
+    <Nav justify className="fixed-bottom">
+      {tabItems.map((item) => (
+        <Nav.Item key={item.to}>
+          <Nav.Link
+            as={NavLink}
+            to={item.to}
+            exact
+            activeClassName="active"
+            className="navlink"
+          >
+            {item.label}
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link className="navlink" href="/ClubPage">
-            동호회
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link className="navlink" href="/FriendRequestPage">
-            매칭
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link className="navlink" href="/MyPage">
-            내정보
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </>
+      ))}
+    </Nav>
   );
 }
 
