@@ -18,8 +18,7 @@ function FriendListPage() {
         // 백엔드 API로부터 친구 목록을 가져오기
         const response = await axios.get("/matching/friend", {
           headers: {
-            Authorization:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjQsImV4cCI6MTY5MjE5MDUxMn0.w3EilPPqHCSkZoUHev5Qrx5yonmtGfiZ3fGIZL8-0MI",
+            Authorization: "여기에 무엇을 적어야할까요..",
           },
         });
         dispatch(setFriendList(response.data)); // Redux 스토어 업데이트
