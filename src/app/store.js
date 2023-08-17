@@ -100,8 +100,10 @@ let friendList = createSlice({
   initialState: [],
   reducers: {
     setFriendList: (state, action) => {
+      let now = action.payload;
+      state = now;
       // return action.payload;
-      return [...action.payload]; // 새로운 배열을 생성하여 대체하도록 수정
+      return state; // 새로운 배열을 생성하여 대체하도록 수정
     },
   },
 });

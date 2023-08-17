@@ -22,7 +22,9 @@ function FriendListPage() {
               "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjQsImV4cCI6MTY5MjM0MDI3MH0.Fi5LzkOfW3S1A8719qYRiDSoPw6KqmZDSZxCATXyyq0",
           },
         });
-        dispatch(setFriendList(response.data)); // Redux 스토어 업데이트
+        let fetchedList = response.data;
+        console.log(JSON.stringify(fetchedList, null, 2));
+        dispatch(setFriendList(fetchedList.result)); // Redux 스토어 업데이트
       } catch (error) {
         console.log(error);
       }
@@ -32,7 +34,7 @@ function FriendListPage() {
     fetchFriendList();
   }, [dispatch]);
 
-  // console.log(friendListData);
+  console.log(friendListData);
 
   return (
     <div>

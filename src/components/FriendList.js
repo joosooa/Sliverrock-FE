@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/friendList.css";
 import friendListImg from "../styles/friendList.jpg";
 import { BsTelephoneFill } from "react-icons/bs";
 
 function FriendList(props) {
+  const [showModal, setShowModal] = useState(false);
+
   const handleCallButtonClick = () => {
-    alert(`${props.friendList.phoneNum}로 전화 걸기`);
+    setShowModal(true);
   };
 
-  console.log(props);
-  // let imgUrl = props.getS3Res.imgUrl;
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div>
@@ -19,11 +22,11 @@ function FriendList(props) {
           alt="friendListImg"
           className="friendListImg"
         />
-        <div>
-          <h3 className="container">
-            <h2 className="container">{props.friendList.nickname}</h2>
+        <div className="container">
+          <h2>{props.friendList.nickname}</h2>
+          <p>
             {props.friendList.birth}&nbsp; ({props.friendList.gender})
-          </h3>
+          </p>
           <button className="callButton" onClick={handleCallButtonClick}>
             <div className="iconImg">
               <BsTelephoneFill />
@@ -31,6 +34,15 @@ function FriendList(props) {
           </button>
         </div>
       </div>
+
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <p>전화번호: {props.friendList.phoneNum}</p>
+            <button onClick={closeModal}>닫기</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
