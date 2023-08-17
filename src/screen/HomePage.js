@@ -6,6 +6,7 @@ import Tab from "../components/Tab";
 import { useDispatch, useSelector } from "react-redux";
 import { setNearUserList } from "../app/store";
 import axios from "axios";
+import NoFriends from "../components/NoFriends.js";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -51,30 +52,40 @@ function HomePage() {
     }
   };
 
-  return (
-    <>
-      <h1 className="title">추천 친구</h1>
-      <Carousel>
-        {nearUserList.map((user) => {
-          return (
-            <>
-              <Profile user={user} />
-              <div className="btn-container">
-                <button
-                  className="custom-btn btn-11"
-                  onClick={() => handleFriendRequest(user.id)}
-                >
-                  친구신청
-                </button>
-              </div>
-            </>
-          );
-        })}
-      </Carousel>
+  if (nearUserList.length === 0) {
+    return (
+      <>
+        <NoFriends />
+        <h1 className="text">추천 친구가 없어요!</h1>
+        <Tab />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h1 className="title">추천 친구</h1>
+        <Carousel>
+          {nearUserList.map((user) => {
+            return (
+              <>
+                <Profile user={user} />
+                <div className="btn-container">
+                  <button
+                    className="custom-btn btn-11"
+                    onClick={() => handleFriendRequest(user.id)}
+                  >
+                    친구신청
+                  </button>
+                </div>
+              </>
+            );
+          })}
+        </Carousel>
 
-      <Tab />
-    </>
-  );
+        <Tab />
+      </>
+    );
+  }
 }
 
 export default HomePage;
