@@ -70,16 +70,19 @@ let club = createSlice({
     {
       name: "산악 동호회",
       img: clubImgMT,
+      phoneNum: "01012345554",
     },
 
     {
       name: "배드민턴 동호회",
       img: clubImgBadminton,
+      phoneNum: "01020097857",
     },
 
     {
       name: "테니스 동호회",
       img: clubImgTennis,
+      phoneNum: "01012345454",
     },
   ],
   reducers: {

@@ -90,6 +90,7 @@ function FriendRequestPage() {
   if (friendRequestList.length === 0) {
     return (
       <>
+        <h1 className="title">{`${friendRequestList.length}명의 실버락 요청이 왔어요`}</h1>
         <NoFriends />
         <h1 className="text">친구 요청이 없어요!</h1>
         <MatchingTab />

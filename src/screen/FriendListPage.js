@@ -40,6 +40,7 @@ function FriendListPage() {
   if (friendListData.length === 0) {
     return (
       <>
+        <h1 className="title">{`${friendListData.length}명의 실버락이 있어요`}</h1>
         <NoFriends />
         <h1 className="text">친구가 없어요!</h1>
         <MatchingTab />

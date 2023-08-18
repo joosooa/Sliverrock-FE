@@ -55,6 +55,7 @@ function HomePage() {
   if (nearUserList.length === 0) {
     return (
       <>
+        <h1 className="title">추천 친구</h1>
         <NoFriends />
         <h1 className="text">추천 친구가 없어요!</h1>
         <Tab />
